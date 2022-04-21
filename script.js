@@ -1,3 +1,4 @@
+//global vars
 const progressBar = document.getElementById("progress-bar");
 const progressText = document.getElementById("progress-text");
 const prefix = "myprog";
@@ -7,12 +8,14 @@ const loomAck = document.getElementById("loom-ack");
 const markIncomplete = document.getElementById("incomplete");
 const videoEmbed = document.getElementById("embed");
 
+//acknowledge Loom
 loomAck.onclick = (e) => {
   loomOverlay.style.display = "none";
   localStorage.setItem("loom", "true");
   videoEmbed.classList.remove("outline");
 };
 
+//update progress
 function updateProgress() {
   if (localStorage.getItem(`${currentSession}`) === null) {
     markIncomplete.style.display = "none";
