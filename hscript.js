@@ -1,4 +1,3 @@
-let currentSession = currentSession || "sessionOne";
 const progressBar = document.getElementById("progress-bar");
 const progressText = document.getElementById("progress-text");
 const prefix = "myprog";
@@ -74,5 +73,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   if (current == "/") {
     mark.style.display = "none";
+    let currentSession = currentSession || "sessionOne";
   }
 });
