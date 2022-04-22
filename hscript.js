@@ -11,6 +11,10 @@ const homeOne = document.getElementById("home1");
 const homeTwo = document.getElementById("home2");
 const homeThree = document.getElementById("home3");
 const homeFour = document.getElementById("home4");
+const menuOne = document.getElementById("menu1");
+const menuTwo = document.getElementById("menu2");
+const menuThree = document.getElementById("menu3");
+const menuFour = document.getElementById("menu4");
 
 function updateProgress() {
   if (localStorage.getItem(`${currentSession}`) === null) {
@@ -24,33 +28,41 @@ function updateProgress() {
   if (localStorage.getItem("sessionOne") == null) {
     progress.push(0);
     homeOne.classList.remove("complete");
+    menuOne.classList.remove("complete");
   } else if (localStorage.getItem("sessionOne") != null) {
     progress.push(25);
     homeOne.classList.add("complete");
+    menuOne.classList.add("complete");
   }
 
   if (localStorage.getItem("sessionTwo") === null) {
     progress.push(0);
     homeTwo.classList.remove("complete");
+    menuTwo.classList.remove("complete");
   } else if (localStorage.getItem("sessionTwo") !== null) {
     progress.push(25);
     homeTwo.classList.add("complete");
+    menuTwo.classList.add("complete");
   }
 
   if (localStorage.getItem("sessionThree") === null) {
     progress.push(0);
     homeThree.classList.remove("complete");
+    menuThree.classList.remove("complete");
   } else if (localStorage.getItem("sessionThree") !== null) {
     progress.push(25);
     homeThree.classList.add("complete");
+    menuThree.classList.add("complete");
   }
 
   if (localStorage.getItem("sessionFour") === null) {
     progress.push(0);
     homeFour.classList.remove("complete");
+    menuFour.classList.remove("complete");
   } else if (localStorage.getItem("sessionFour") !== null) {
     progress.push(25);
     homeFour.classList.add("complete");
+    menuFour.classList.add("complete");
   }
 
   let total = progress.reduce(function (a, b) {
