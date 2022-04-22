@@ -1,4 +1,4 @@
-const currentSession = "sessionOne"
+let currentSession = currentSession || "sessionOne";
 const progressBar = document.getElementById("progress-bar");
 const progressText = document.getElementById("progress-text");
 const prefix = "myprog";
