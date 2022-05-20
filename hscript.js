@@ -16,6 +16,15 @@ const menuTwo = document.getElementById("menu2");
 const menuThree = document.getElementById("menu3");
 const menuFour = document.getElementById("menu4");
 
+function replaceNames() {
+  let techArch = document.getElementById("taName").textContent;
+  let customerSuccessManager = document.getElementById("csmName").textContent;
+  let taReplace = document.getElementById("taReplace");
+  taReplace.textContent = techArch;
+  let csmReplace = document.getElementById("csmReplace");
+  csmReplace.textContent = customerSuccessManager;
+}
+
 function updateProgress() {
   if (localStorage.getItem(`${currentSession}`) === null) {
     markIncomplete.style.display = "none";
@@ -93,6 +102,7 @@ function updateProgress() {
 
 window.addEventListener("DOMContentLoaded", (event) => {
   updateProgress();
+  replaceNames();
   const current = window.location.pathname;
   const mark = document.getElementById("right");
 
