@@ -2,8 +2,6 @@ const progressBar = document.getElementById("progress-bar");
 const progressText = document.getElementById("progress-text");
 const prefix = "myprog";
 const markComplete = document.getElementById("complete");
-const loomOverlay = document.getElementById("overlay");
-const loomAck = document.getElementById("loom-ack");
 const markIncomplete = document.getElementById("incomplete");
 const videoEmbed = document.getElementById("embed");
 const menuOne = document.getElementById("menu1");
@@ -11,11 +9,6 @@ const menuTwo = document.getElementById("menu2");
 const menuThree = document.getElementById("menu3");
 const menuFour = document.getElementById("menu4");
 
-loomAck.onclick = (e) => {
-  loomOverlay.style.display = "none";
-  localStorage.setItem("loom", "true");
-  videoEmbed.classList.remove("outline");
-};
 
 function updateProgress() {
   if (localStorage.getItem(`${currentSession}`) === null) {
@@ -86,12 +79,6 @@ function updateProgress() {
 
 window.addEventListener("DOMContentLoaded", (event) => {
   updateProgress();
-  if (localStorage.getItem("loom") === null) {
-    loomOverlay.style.display = "flex";
-  } else {
-    loomOverlay.style.display = "none";
-    videoEmbed.classList.remove("outline");
-  }
 });
 
 markComplete.onclick = (e) => {
